@@ -475,7 +475,6 @@
                 resultText = sessionStorage.getItem('result-text');
                 const data = {
                     text: resultText,
-                    city: resultCity,
                     design: +activeDesign
                 };
                 console.log('Данные, отправляемые на сервер:', data);
@@ -513,7 +512,6 @@
 
                         imgElement.src = dataImg;
                         downloadLink.href = dataImg;
-                        downloadLink2.href = dataImg;
 
                         sessionStorage.setItem('dataImgStorage', dataImg);
                     })
@@ -525,18 +523,15 @@
             const setupResultPage = () => {
                 const imgElement = document.querySelector('.result-page__design-card-img');
                 const downloadLink = document.querySelector('.result-page__link');
-                const downloadLink2 = document.querySelector('.result-page__link2');
 
                 dataImg = sessionStorage.getItem('dataImgStorage');
                 console.log(dataImg);
 
                 imgElement.src = dataImg;
                 downloadLink.href = dataImg;
-                downloadLink2.href = dataImg;
 
                 const fileName = dataImg.split('/').pop();
                 downloadLink.download = fileName;
-                downloadLink2.download = fileName;
                 console.log(document.querySelector('.result-page__link'));
             };
 
