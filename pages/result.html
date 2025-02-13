@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheFlex</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/UI/button.css">
+
+    <link rel="stylesheet" href="../css/pages/result.css">
+</head>
+
+<body class="wrapper">
+    <header class="header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-wrap">
+                <img src="../imgs/Logo.svg" alt="" class="logo">
+            </div>
+        </a>
+    </header>
+    <main class="main">
+        <div class="main__result result-page">
+            <div class="result-page__container my-container">
+                <div class="result-page__content content">
+                    <div class="result-page__text text">
+                        <h2 class="result-page__title inner-title">Готово</h2>
+                    </div>
+                    <div class="result-page__constructor constructor">
+                        <div class="result-page__design-card design-card">
+                            <img src="" alt="" class="result-page__design-card-img" loading="lazy">
+                        </div>
+                    </div>
+                    <a href="" class="result-page__link my-button" download>
+                        <div class="my-button__icon-wrap">
+                            <img src="../imgs/button/arrow.svg" alt="" class="my-button__icon">
+                        </div>
+                        <span class="my-button__text">Скачать</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imgElement = document.querySelector('.result-page__design-card-img');
+            const downloadLink = document.querySelector('.result-page__button');
+            const imgUrl = localStorage.getItem('imgUrl');
+
+            imgElement.src = imgUrl;
+            downloadLink.href = imgUrl;
+
+            window.addEventListener('beforeunload', function() {
+                const imgUrl = localStorage.getItem('imgUrl');
+
+                localStorage.clear();
+
+                localStorage.setItem('imgUrl', imgUrl);
+            });
+        });
+    </script>
+</body>
+
+</html>

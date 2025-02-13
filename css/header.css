@@ -1,0 +1,41 @@
+.header {
+    padding-top: 29px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.logo-link {
+}
+.logo-wrap {
+    height: 8px;
+}
+.logo {
+    height: 100%;
+    width: auto;
+}
+
+@media (min-width:374px) {
+    .header {
+        padding-top: 30px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1
+    }
+
+    .logo-wrap {
+        height: 9px
+    }
+}
+
+@media (min-width:427px) {
+    .header {
+        padding-top: 42px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1
+    }
+
+    .logo-wrap {
+        height: 11px
+    }
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheFlex</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/UI/button.css">
+    <link rel="stylesheet" href="../css/UI/input.css">
+    <link rel="stylesheet" href="../css/card.css">
+
+    <link rel="stylesheet" href="../css/pages/text.css">
+</head>
+
+<body class="wrapper">
+    <header class="header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-wrap">
+                <img src="../imgs/Logo.svg" alt="" class="logo">
+            </div>
+        </a>
+    </header>
+    <main class="main">
+        <div class="main__text text-page">
+            <div class="text-page__container my-container">
+                <div class="text-page__content content">
+                    <div class="text-page__text text">
+                        <h2 class="text-page__title inner-title">Выбери текст</h2>
+                    </div>
+                    <div class="text-page__constructor constructor">
+                        <input class="my-input text-page__my-input" type="text" name="cardText">
+                        <div class="text-page__slider text-slider">
+                            <div class="swiper text-slider__swiper">
+                                <div class="swiper-wrapper text-slider__swiper-wrapper">
+                                    <div class="swiper-slide text-slider__slide swiper-slide-active">
+                                        <div class="text-slider__card text-card">
+                                            <div class="text-card__inner">
+                                                <div class="text-card__text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-page__design-card-container">
+                            <div class="text-page__design-card design-card">
+                                <div class="design-card__body">
+                                    <div class="design-card__header">
+                                        <div class="design-card__top-text">e-сертификат</div>
+                                            <img src="../imgs/Logo.svg" alt="" class="design-card__logo-img">
+                                    </div>
+                                    <div class="design-card__title"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="e"></a>
+                    <a href="./name.html" class="my-button text-page__button">
+                        <div class="my-button__icon-wrap">
+                            <img src="../imgs/button/arrow.svg" alt="" class="my-button__icon">
+                        </div>
+                        <span class="my-button__text">следующий шаг</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const textSwiper = new Swiper('.text-slider__swiper', {
+            direction: 'horizontal',
+            slidesPerView: 1,
+            spaceBetween: 13,
+            on: {
+                slideChangeTransitionEnd: function () {
+                    updateText();
+                }
+            }
+        });
+
+        function updateText() {
+            const activeSlide = document.querySelector('.swiper-slide-active .text-card__text');
+            const designCardTitle = document.querySelector('.text-page__design-card .design-card__title');
+            const cardTextInput = document.querySelector('.text-page__my-input');
+
+            let slideText = activeSlide.innerHTML.replace(/<br\s*\/?>/gi, '');
+            slideText = slideText.replace(/\s{2,}/g, ' ').trim();
+
+            cardTextInput.value = slideText;
+            designCardTitle.innerHTML = cardTextInput.value;
+            localStorage.setItem('selectedText', cardTextInput.value);
+
+            console.log(cardTextInput.value, localStorage.getItem('activeDesign'), localStorage.getItem('selectedText'))
+        }
+
+        const designCard = document.querySelector('.design-card');
+        const design = localStorage.getItem('activeDesign');
+        designCard.setAttribute('data-design', design);
+
+        const textSliderWrapper = document.querySelector('.text-slider__swiper-wrapper');
+        const textSlide = document.querySelector('.text-slider__slide');
+        const textCardText = document.querySelector('.text-card .text-card__text');
+        console.log(textSlide)
+
+        const arrTexts = [
+            ['ты же обещала, что будем ходить во Флекс вместе'],
+            ['начни уже эти чертовы тренировки'],
+            ['у тебя всё получится'],
+            ['я хочу сходить с тобой на Power Strike'],
+            ['давай помедитируем на йоге вместе? '],
+            ['давай полетаем на SkyFlex?'],
+            ['когда, если не сейчас?'],
+            ['ты такая классная'],
+        ];
+
+        textCardText.innerHTML = arrTexts[0][0];
+        arrTexts.shift();
+
+        for (let texts of arrTexts) {
+            const newSlide = textSlide.cloneNode(true);
+            const newTextCardText = newSlide.querySelector('.text-card__text');
+
+            for (let text of texts) {
+                newTextCardText.innerHTML = text;
+            }
+
+            textSliderWrapper.append(newSlide);
+        }
+
+        console.log('Active slide:', document.querySelector('.swiper-slide-active'));
+        updateText();
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mainPage = document.querySelector('.main-page');
+        const designPage = document.querySelector('.design-page');
+        const textPage = document.querySelector('.text-page');
+        const namePage = document.querySelector('.name-page');
+        const loadingPage = document.querySelector('.loading-page');
+        const resultPage = document.querySelector('.result-page');
+
+        let activeDesign = '';
+        let activeDesignImg = '';
+        let selectedText = '';
+        let resultText = '';
+        let dataImg = '';
+
+        for (let i = 0; i < sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            let value = sessionStorage.getItem(key);
+            console.log(key, value);
+        }
+
+        const setPageDisplay = (page, display) => {
+            page.style.display = display;
+            if (display === 'block') {
+                const constructor = page.querySelector('.constructor');
+                if (constructor) {
+                    constructor.classList.add('active');
+                }
+            } else {
+                const constructor = page.querySelector('.constructor');
+                if (constructor) {
+                    constructor.classList.remove('active');
+                }
+            }
+        };
+
+        const setBackground = (currentPage) => {
+            const backgrounds = {
+                'main-page': '#F5F5F5',
+                'loading-page': '#F5F5F6',
+                'result-page': 'linear-gradient(180deg, #FAFAFA 0%, #FFC7D3 100%)',
+                'default': '#FAFAFA'
+            };
+
+            if (currentPage == 'result-page') {
+                document.body.style.background = 'transparent';
+            } else {
+                document.body.style.background = backgrounds[currentPage] || backgrounds['default'];
+            }
+
+            document.querySelector('.main').style.background = backgrounds[currentPage] || backgrounds['default'];
+        };
+
+        const initDesignSwiper = () => {
+            const designSwiper = new Swiper('.design-slider__swiper', {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                spaceBetween: 13,
+                pagination: {
+                    el: '.design-slider__swiper-pagination',
+                },
+                on: {
+                    slideChangeTransitionEnd: selectDesign
+                }
+            });
+            selectDesign();
+        };
+
+        const selectDesign = () => {
+            const activeSlide = document.querySelector('.swiper-slide-active .design-card');
+            const designInput = document.querySelector('.design-page__my-input');
+
+            activeDesign = activeSlide.getAttribute('data-design');
+            activeDesignImg = activeSlide.querySelector('.design-card__img').getAttribute('src');
+
+            designInput.value = activeDesign;
+
+            sessionStorage.setItem('data-design-active', activeDesign);
+            sessionStorage.setItem('design-active-img', activeDesignImg);
+
+            console.log(designInput.value, activeDesignImg);
+        };
+
+        const initTextSwiper = () => {
+            const textSwiper = new Swiper('.text-slider__swiper', {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                spaceBetween: 13,
+                on: {
+                    slideChangeTransitionEnd: selectText
+                }
+            });
+            selectText();
+        };
+
+        const selectText = () => {
+            const activeSlide = document.querySelector('.swiper-slide-active .text-card__text');
+            const designCardTitle = document.querySelector('.text-page__design-card .design-card__title');
+            const cardTextInput = document.querySelector('.text-page__my-input');
+
+            let slideText = activeSlide.innerHTML.replace(/<br\s*\/?>/gi, '');
+            slideText = slideText.replace(/\s{2,}/g, ' ').trim();
+
+            cardTextInput.value = slideText;
+            designCardTitle.innerHTML = cardTextInput.value;
+            selectedText = cardTextInput.value;
+            sessionStorage.setItem('selected-text', selectedText);
+
+            console.log(cardTextInput.value, selectedText);
+        };
+
+        const saveInputText = () => {
+            const nameInput = document.querySelector('.name-page__my-input');
+            if (nameInput.value) {
+                let nameValue = nameInput.value.replace(/\s/g, '').trim();
+                selectedText = sessionStorage.getItem('selected-text');
+                resultText = `${nameValue}, ${selectedText}`;
+                sessionStorage.setItem('result-text', resultText);
+                console.log(resultText);
+            }
+        };
+
+        const postData = () => {
+            activeDesign = sessionStorage.getItem('data-design-active');
+            resultText = sessionStorage.getItem('result-text');
+            const data = {
+                text: resultText,
+                design: +activeDesign
+            };
+            console.log('Данные, отправляемые на сервер:', data);
+
+            const queryString = new URLSearchParams(data).toString();
+
+            const url = `https://nikolajgromkov.ru/flex/?${queryString}`;
+
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Ошибка сети или сервера');
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    console.log('Данные успешно отправлены и получен ответ:', result);
+
+                    setPageDisplay(loadingPage, 'none');
+                    setPageDisplay(resultPage, 'block');
+                    sessionStorage.setItem('currentPage', 'result-page');
+                    setBackground(sessionStorage.getItem('currentPage'));
+
+                    dataImg = result.url;
+
+                    const imgElement = document.querySelector('.result-page__design-card-img');
+                    const downloadLink = document.querySelector('.result-page__link');
+
+                    imgElement.src = dataImg;
+                    downloadLink.href = dataImg;
+
+                    sessionStorage.setItem('dataImgStorage', dataImg);
+                })
+                .catch(error => {
+                    console.error('Ошибка при отправке запроса:', error);
+                });
+        };
+
+        const setupTextPage = () => {
+            const designCard = document.querySelector('.text-page__design-card.design-card');
+            const designCardImg2 = designCard.querySelector('.design-card__img');
+            designCard.setAttribute('data-design', sessionStorage.getItem('data-design-active'));
+            designCardImg2.setAttribute('src', sessionStorage.getItem('design-active-img'));
+
+            const textSliderWrapper = document.querySelector('.text-slider__swiper-wrapper');
+            const textSlide = document.querySelector('.text-slider__slide');
+            const textCardText = document.querySelector('.text-card .text-card__text');
+
+            const arrTexts = [
+                ['ты же обещала, что будем ходить во Флекс вместе'],
+                ['начни уже эти чертовы тренировки'],
+                ['у тебя всё получится'],
+                ['я хочу сходить с тобой на Power Strike'],
+                ['давай помедитируем на йоге вместе? '],
+                ['давай полетаем на SkyFlex?'],
+                ['когда, если не сейчас?'],
+                ['ты такая классная'],
+            ];
+
+            textCardText.innerHTML = arrTexts[0][0];
+            arrTexts.shift();
+
+            for (let texts of arrTexts) {
+                const newSlide = textSlide.cloneNode(true);
+                const newTextCardText = newSlide.querySelector('.text-card__text');
+
+                for (let text of texts) {
+                    newTextCardText.innerHTML = text;
+                }
+
+                textSliderWrapper.append(newSlide);
+            }
+
+            selectText();
+        };
+
+        const setupResultPage = () => {
+            const imgElement = document.querySelector('.result-page__design-card-img');
+            const downloadLink = document.querySelector('.result-page__link');
+
+            dataImg = sessionStorage.getItem('dataImgStorage');
+            console.log(dataImg);
+
+            imgElement.src = dataImg;
+            downloadLink.href = dataImg;
+
+            const fileName = dataImg.split('/').pop();
+            downloadLink.download = fileName;
+            console.log(document.querySelector('.result-page__link'));
+        };
+
+        const validateName = () => {
+            const nameInput = document.querySelector('.name-page__my-input');
+            const validationField = document.querySelector('.validation-field');
+            const nameValue = nameInput.value.trim();
+            console.log(nameValue)
+
+            const nameRegular = /^[A-Za-zА-Яа-яЁё]+$/;
+
+            if (nameValue == '') {
+                nameInput.style.borderColor = 'red';
+                nameInput.style.boxShadow = '0 0 5px red';
+                validationField.textContent = 'Необходимо ввести имя!';
+                console.log(6)
+                return false;
+            } else if (!nameRegular.test(nameValue)) {
+                nameInput.style.borderColor = 'red';
+                nameInput.style.boxShadow = '0 0 5px red';
+                validationField.textContent = 'Неправильно введено имя!';
+                console.log(1)
+                return false;
+            } else {
+                nameInput.style.borderColor = '';
+                nameInput.style.boxShadow = '';
+                validationField.textContent = '';
+                console.log(2)
+                return true;
+            }
+        };
+
+        document.querySelector('.name-page__my-input').addEventListener('input', validateName);
+
+        const currentPage = sessionStorage.getItem('currentPage') || 'main-page';
+        sessionStorage.setItem('currentPage', currentPage);
+        setBackground(currentPage);
+
+        switch (currentPage) {
+            case 'main-page':
+                setPageDisplay(mainPage, 'block');
+                break;
+            case 'design-page':
+                setPageDisplay(designPage, 'block');
+                initDesignSwiper();
+                break;
+            case 'text-page':
+                initTextSwiper();
+                setupTextPage();
+                setPageDisplay(textPage, 'block');
+                break;
+            case 'name-page':
+                setPageDisplay(namePage, 'block');
+                document.querySelector('.name-page__button').addEventListener('click', () => {
+                    if (validateName()) {
+                        saveInputText();
+                        setPageDisplay(mainPage, 'none');
+                        setPageDisplay(designPage, 'none');
+                        setPageDisplay(textPage, 'none');
+                        setPageDisplay(namePage, 'none');
+                        setPageDisplay(loadingPage, 'block');
+                        sessionStorage.setItem('currentPage', 'loading-page');
+                        setBackground(sessionStorage.getItem('currentPage'));
+                        setTimeout(postData, 1000);
+                    }
+                });
+                break;
+            case 'loading-page':
+                setPageDisplay(loadingPage, 'block');
+                setTimeout(postData, 1000);
+                break;
+            case 'result-page':
+                setPageDisplay(resultPage, 'block');
+                setupResultPage();
+                break;
+        }
+
+
+        document.querySelector('.logo-link').addEventListener('click', () => {
+            setPageDisplay(mainPage, 'block');
+            setPageDisplay(designPage, 'none');
+            setPageDisplay(textPage, 'none');
+            setPageDisplay(namePage, 'none');
+            setPageDisplay(loadingPage, 'none');
+            setPageDisplay(resultPage, 'none');
+            sessionStorage.clear();
+            sessionStorage.setItem('currentPage', 'main-page');
+            setBackground(sessionStorage.getItem('currentPage'));
+            console.log(1)
+        });
+
+        document.querySelector('.main__button').addEventListener('click', () => {
+            setPageDisplay(mainPage, 'none');
+            setPageDisplay(designPage, 'block');
+            sessionStorage.setItem('currentPage', 'design-page');
+            setBackground(sessionStorage.getItem('currentPage'));
+            initDesignSwiper();
+        });
+
+        document.querySelector('.design-page__button').addEventListener('click', () => {
+            setPageDisplay(designPage, 'none');
+            initTextSwiper();
+            setupTextPage();
+            setPageDisplay(textPage, 'block');
+            sessionStorage.setItem('currentPage', 'text-page');
+            setBackground(sessionStorage.getItem('currentPage'));
+        });
+
+        document.querySelector('.text-page__button').addEventListener('click', () => {
+            setPageDisplay(mainPage, 'none');
+            setPageDisplay(designPage, 'none');
+            setPageDisplay(textPage, 'none');
+            setPageDisplay(namePage, 'block');
+            sessionStorage.setItem('currentPage', 'name-page');
+            setBackground(sessionStorage.getItem('currentPage'));
+            document.querySelector('.name-page__button').addEventListener('click', saveInputText);
+        });
+
+        document.querySelector('.name-page__button').addEventListener('click', () => {
+            if (validateName()) {
+                saveInputText();
+                setPageDisplay(mainPage, 'none');
+                setPageDisplay(designPage, 'none');
+                setPageDisplay(textPage, 'none');
+                setPageDisplay(namePage, 'none');
+                setPageDisplay(loadingPage, 'block');
+                sessionStorage.setItem('currentPage', 'loading-page');
+                setBackground(sessionStorage.getItem('currentPage'));
+                setTimeout(postData, 1000);
+            }
+        });
+        document.querySelector('.result-page__link').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const url = this.href;
+            const fileName = url.split('/').pop();
+            console.log(url)
+            fetch(url, { method: 'GET' })
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                })
+                .catch(error => {
+                    console.error('Ошибка при скачивании файла:', error);
+                });
+        });
+    });
+</script>
+</body>
+
+</html>

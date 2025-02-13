@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheFlex</title>
+
+    <link rel="stylesheet" href="./libs/swiper.min.css">
+    <link rel="stylesheet" href="./css/main.min.css">
+    <link rel="stylesheet" href="./css/UI/button.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <a href="./index.html" class="logo-link">
+                <div class="logo-wrap">
+                    <img src="./imgs/Logo.svg" alt="" class="logo">
+                </div>
+            </a>
+        </header>
+        <main class="main">
+            <!-- ЗАГЛУШКА ДЛЯ ПК -->
+            <div class="main__desktop-block desktop-block">
+                <div class="desktop-block__container my-container">
+                    <img src="./imgs/logo-white.svg" alt="" class="desktop-block__logo">
+                    <div class="desktop-block__text">
+                        Сайт доступен для мобильной версии <br> Откройте сайт на телефоне
+                    </div>
+                    <div class="desktop-block__icon-wrap">
+                        <img src="./imgs/desktop-icon.svg" alt="" class="desktop-block__icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-page" style="display: none;">
+                <div class="main__container my-container">
+                    <div class="main-page__text text">
+                        <h1 class="main__title">Hey, flexgirl</h1>
+                        <p class="main__pre-title">Ты можешь создать классное <span>персональное приглашение</span> на
+                            пробную
+                            тренировку <br> для своей <span>подруги</span></p>
+                    </div>
+                    <button class="main__button my-button">
+                        <div class="my-button__icon-wrap">
+                            <img src="./imgs/button/lightning.svg" alt="" class="my-button__icon">
+                        </div>
+                        <span class="my-button__text">нажми, если готова начать</span>
+                    </button>
+                    <div class="main__reposts reposts">
+                        <div class="reposts__counter">
+                            <div class="reposts__imgs">
+                                <div class="reposts__img-wrap">
+                                    <img src="./imgs/client1.png" alt="" class="reposts__img">
+                                </div>
+                                <div class="reposts__img-wrap">
+                                    <img src="./imgs/client2.png" alt="" class="reposts__img">
+                                </div>
+                                <div class="reposts__img-wrap">
+                                    <img src="./imgs/client3.png" alt="" class="reposts__img">
+                                </div>
+                                <div class="reposts__img-wrap">
+                                    <img src="./imgs/client4.png" alt="" class="reposts__img">
+                                </div>
+                            </div>
+                            <div class="reposts__count-text">+<span class="reposts__count">356</span></div>
+                        </div>
+                        <div class="reposts__text">flex girls отправили приглашение своим подругам</div>
+                    </div>
+                </div>
+                <div class="main__background-images">
+                    <img src="./imgs/loading-img.png" alt="" class="main__heart-img main__heart-img_rotate" loading="lazy">
+                    <img src="./imgs/envelope.png" alt="" class="main__bag-img main__bag-img_rotate" loading="lazy">
+                    <img src="./imgs/main/card-img.png" alt="" class="main__card-img main__card-img_rotate" loading="lazy">
+                </div>
+                <img src="./imgs/bow.png" alt="" class="main__pink-bottle-img main__pink-bottle-img_rotate"
+                    loading="lazy">
+                <img src="./imgs/present.png" alt="" class="main__blue-ball-img main__blue-ball-img_rotate" loading="lazy">
+            </div>
+            <div class="main__design design-page" style="display: none;">
+                <div class="design-page__container my-container">
+                    <div class="design-page__content content">
+                        <div class="design-page__text text">
+                            <h2 class="design-page__title inner-title">Выбери оформление</h2>
+                        </div>
+                        <div class="design-page__constructor constructor">
+                            <input class="my-input design-page__my-input" type="text" name="design">
+                            <div class="design-page__slider design-slider">
+                                <div class="swiper design-slider__swiper">
+                                    <div class="swiper-wrapper design-slider__swiper-wrapper">
+                                        <div class="swiper-slide design-slider__slide">
+                                            <div class="design-slider__design-card design-card" data-design="1">
+                                                <div class="design-card__body">
+                                                    <img src="./imgs/cards/card1.png" alt="" class="design-card__img"
+                                                        loading="lazy">
+                                                    <div class="design-card__title"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide design-slider__slide">
+                                            <div class="design-slider__design-card design-card" data-design="2">
+                                                <div class="design-card__body">
+                                                    <img src="./imgs/cards/card2.png" alt="" class="design-card__img"
+                                                        loading="lazy">
+                                                    <div class="design-card__title"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide design-slider__slide">
+                                            <div class="design-slider__design-card design-card" data-design="3">
+                                                <div class="design-card__body">
+                                                    <img src="./imgs/cards/card3.png" alt="" class="design-card__img"
+                                                        loading="lazy">
+                                                    <div class="design-card__title"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination design-slider__swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="design-page__button my-button">
+                            <div class="my-button__icon-wrap">
+                                <img src="./imgs/button/arrow.svg" alt="" class="my-button__icon">
+                            </div>
+                            <span class="my-button__text">следующий шаг</span>
+                        </button>
+                        <button class="design-page__button-back back-button">
+                            назад
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="main__text text-page" style="display: none;">
+                <div class="text-page__container my-container">
+                    <div class="text-page__content content">
+                        <div class="text-page__text text">
+                            <h2 class="text-page__title inner-title">Выбери текст</h2>
+                        </div>
+                        <div class="text-page__constructor constructor">
+                            <input class="my-input text-page__my-input" type="text" name="cardText">
+                            <div class="text-page__slider text-slider">
+                                <div class="swiper text-slider__swiper">
+                                    <div class="swiper-wrapper text-slider__swiper-wrapper">
+                                        <div class="swiper-slide text-slider__slide">
+                                            <div class="text-slider__card text-card">
+                                                <div class="text-card__inner">
+                                                    <div class="text-card__text">
+                                                        Имя, ты классная, давай тренироваться вместе?
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide text-slider__slide">
+                                            <div class="text-slider__card text-card">
+                                                <div class="text-card__inner">
+                                                    <div class="text-card__text">
+                                                        Имя, хочу ходить на тренировки с тобой
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide text-slider__slide">
+                                            <div class="text-slider__card text-card">
+                                                <div class="text-card__inner">
+                                                    <div class="text-card__text">
+                                                        Имя, хочу медитировать на йоге вместе
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination text-slider__swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="text-page__design-card-container">
+                                <div class="text-page__design-card design-card">
+                                    <div class="design-card__body">
+                                        <img src="" alt="" class="design-card__img" loading="lazy">
+                                        <div class="design-card__title"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="my-button text-page__button">
+                            <div class="my-button__icon-wrap">
+                                <img src="./imgs/button/arrow.svg" alt="" class="my-button__icon">
+                            </div>
+                            <span class="my-button__text">следующий шаг</span>
+                        </button>
+                        <button class="text-page__button-back back-button">
+                            назад
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="main__name name-page" style="display: none;">
+                <div class="name-page__container my-container">
+                    <div class="name-page__content content">
+                        <div class="name-page__text text">
+                            <h2 class="name-page__title inner-title">Введи имя подруги</h2>
+                        </div>
+                        <div class="name-page__constructor constructor">
+                            <input class="my-input name-page__my-input" type="text" name="name"
+                                placeholder="Напиши имя подруги" required>
+                            <span class="validation-field"></span>
+                            <!-- <div class="custom-select-wrapper">
+                                <select class="my-select name-page__my-select" name="select-city" id="citySelect">
+                                    <option class="my-select__option" value="" default>Иркутск</option>
+                                    <option class="my-select__option" value="">Ангарск</option>
+                                    <option class="my-select__option" value="">Красноярск</option>
+                                    <option class="my-select__option" value="">Новосибирск</option>
+                                    <option class="my-select__option" value="">Тюмень</option>
+                                    <option class="my-select__option" value="">Казань</option>
+                                    <option class="my-select__option" value="">Саратов</option>
+                                    <option class="my-select__option" value="">Уфа</option>
+                                    <option class="my-select__option" value="">Челябинск</option>
+                                </select>
+                                <div class="custom-arrow"></div>
+                            </div> -->
+                        </div>
+                        <button class="name-page__button my-button">
+                            <div class="my-button__icon-wrap">
+                                <img src="./imgs/button/arrow.svg" alt="" class="my-button__icon">
+                            </div>
+                            <span class="my-button__text">следующий шаг</span>
+                        </button>
+                        <button class="name-page__button-back back-button">
+                            назад
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
+            <div class="main__loading loading-page" style="display: none;">
+                <div class="loading-page__container my-container">
+                    <div class="loading-page__loader loader-wrap">
+                        <div class="loader-wrap__text">Происходит магия</div>
+                        <div class="loader-wrap__loader"></div>
+                    </div>
+                    <div class="loading-page__img-wrap">
+                        <img src="./imgs/loading-img.png" alt="" class="loading-page__img float" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="main__result result-page" style="display: none;">
+                <div class="result-page__container my-container">
+                    <div class="result-page__content content">
+                        <div class="result-page__constructor constructor">
+                            <div class="result-page__design-card-wrap">
+                                <div class="result-page__design-card design-card">
+                                    <img src="" alt="" class="result-page__design-card-img">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" class="my-button result-page__link" download>
+                            <div class="my-button__icon-wrap">
+                                <img src="./imgs/button/lightning-white-img.svg" alt="" class="my-button__icon">
+                            </div>
+                            <span class="my-button__text">Скачать</span>
+                        </a>
+                        <p class="result-page__bottom-text">отправь сертификат подруге в любом месенджере</p>
+                    </div>
+                    <div class="result-page__background-imgs">
+                        <img src="./imgs/blue-ball.png" alt="" class="result-page__blue-ball-img float" loading="lazy">
+                        <img src="./imgs/dumbbells.png" alt="" class="result-page__dumbbells-img float" loading="lazy">
+                        <img src="./imgs/pink-bottle.png" alt=""
+                            class="result-page__pink-bottle-img result-page__pink-bottle-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./libs/swiper.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainPage = document.querySelector('.main-page');
+            const designPage = document.querySelector('.design-page');
+            const textPage = document.querySelector('.text-page');
+            const namePage = document.querySelector('.name-page');
+            const loadingPage = document.querySelector('.loading-page');
+            const resultPage = document.querySelector('.result-page');
+
+            let activeDesign = '';
+            let activeDesignImg = '';
+            let selectedText = '';
+            let resultText = '';
+            let resultCity = '';
+            let dataImg = '';
+
+            for (let i = 0; i < sessionStorage.length; i++) {
+                let key = sessionStorage.key(i);
+                let value = sessionStorage.getItem(key);
+                console.log(key, value);
+            }
+
+            const setPageDisplay = (page, display) => {
+                page.style.display = display;
+            };
+
+            const setBackground = (currentPage) => {
+                const backgrounds = {
+                    'main-page': 'linear-gradient(180deg, #FAFAFA 0%, #FFABCA 100%)',
+                    'loading-page': '#F5F5F6',
+                    'result-page': 'linear-gradient(180deg, #FAFAFA 0%, #FFABCA 100%)',
+                    'default': '#FAFAFA'
+                };
+
+                if (currentPage == 'result-page') {
+                    document.body.style.background = 'transparent';
+                } else {
+                    document.body.style.background = backgrounds[currentPage] || backgrounds['default'];
+                }
+
+                // document.querySelector('.main').style.background = backgrounds[currentPage] || backgrounds['default'];
+            };
+
+            const restoreTextCard = () => {
+                const designCardTitle = document.querySelector('.text-page__design-card .design-card__title');
+                const cardTextInput = document.querySelector('.text-page__my-input');
+                const savedText = sessionStorage.getItem('selected-text');
+
+                if (savedText) {
+                    cardTextInput.value = savedText;
+                    designCardTitle.innerHTML = savedText;
+                }
+            };
+
+            let designSwiper;
+
+            const initDesignSwiper = () => {
+
+                if (designSwiper) {
+                    designSwiper.destroy(true, true);
+                }
+
+                designSwiper = new Swiper('.design-slider__swiper', {
+                    direction: 'horizontal',
+                    spaceBetween: 13,
+                    pagination: {
+                        el: '.design-slider__swiper-pagination',
+                    },
+                    on: {
+                        slideChangeTransitionEnd: selectDesign
+                    }
+                });
+
+                designSwiper.slideTo(sessionStorage.getItem('data-design-active') - 1 || 0, 0);
+                selectDesign();
+                restoreTextCard();
+            };
+
+            const selectDesign = () => {
+                const activeSlide = document.querySelector('.swiper-slide-active .design-card');
+                const designInput = document.querySelector('.design-page__my-input');
+
+                activeDesign = activeSlide.getAttribute('data-design');
+                activeDesignImg = activeSlide.querySelector('.design-card__img').getAttribute('src');
+
+                designInput.value = activeDesign;
+
+                sessionStorage.setItem('data-design-active', activeDesign);
+                sessionStorage.setItem('design-active-img', activeDesignImg);
+                sessionStorage.setItem('design-active-slide-index', designSwiper.activeIndex);
+                console.log(designInput.value, activeDesignImg);
+            };
+
+            let textSwiper;
+
+            const initTextSwiper = () => {
+                if (textSwiper) {
+                    textSwiper.destroy(true, true);
+                }
+
+                textSwiper = new Swiper('.text-slider__swiper', {
+                    direction: 'horizontal',
+                    slidesPerView: 1,
+                    spaceBetween: 13,
+                    pagination: {
+                        el: '.text-slider__swiper-pagination',
+                    },
+                    on: {
+                        slideChangeTransitionEnd: selectText
+                    }
+                });
+
+                const savedSlideIndex = sessionStorage.getItem('text-active-slide-index') || 1;
+                textSwiper.slideTo(savedSlideIndex, 0);
+                setTimeout(() => {
+                    selectText();
+                }, 100);
+                restoreTextCard();
+            };
+
+            const selectText = () => {
+                console.log('sel')
+                const activeSlide = document.querySelector('.swiper-slide-active .text-card__text');
+                const designCardTitle = document.querySelector('.text-page__design-card .design-card__title');
+                const cardTextInput = document.querySelector('.text-page__my-input');
+                console.log(activeSlide)
+
+                if (activeSlide) {
+                    let slideText = activeSlide.innerHTML.replace(/<br\s*\/?>/gi, '').replace(/\s{2,}/g, ' ').trim();
+                    cardTextInput.value = slideText;
+                    designCardTitle.innerHTML = cardTextInput.value;
+                    selectedText = cardTextInput.value;
+
+                    sessionStorage.setItem('selected-text', selectedText);
+                    sessionStorage.setItem('text-active-slide-index', textSwiper.activeIndex);
+
+                    console.log(cardTextInput.value, selectedText);
+                }
+            };
+
+            const setupTextPage = () => {
+                const designCard = document.querySelector('.text-page__design-card.design-card');
+                const designCardImg2 = designCard.querySelector('.design-card__img');
+                designCard.setAttribute('data-design', sessionStorage.getItem('data-design-active'));
+                designCardImg2.setAttribute('src', sessionStorage.getItem('design-active-img'));
+
+                // const textSliderWrapper = document.querySelector('.text-slider__swiper-wrapper');
+                // const textSlide = document.querySelector('.text-slider__slide');
+                // const textCardText = document.querySelector('.text-card .text-card__text');
+
+                // const arrTexts = [
+                //     ['ты же обещала, что будем ходить во Флекс вместе'],
+                //     ['у тебя всё получится'],
+                //     ['я хочу сходить с тобой на Power Strike'],
+                //     ['давай помедитируем на йоге вместе?'],
+                //     ['давай полетаем на SkyFlex?'],
+                //     ['когда, если не сейчас?'],
+                //     ['ты такая классная'],
+                // ];
+
+                // textCardText.innerHTML = arrTexts[0][0];
+                // arrTexts.shift();
+
+                // for (let texts of arrTexts) {
+                //     const newSlide = textSlide.cloneNode(true);
+                //     const newTextCardText = newSlide.querySelector('.text-card__text');
+
+                //     for (let text of texts) {
+                //         newTextCardText.innerHTML = text;
+                //     }
+
+                //     textSliderWrapper.append(newSlide);
+                // }
+
+                // selectText();
+            };
+
+            const options = document.querySelectorAll('.my-select__option');
+            options.forEach(option => {
+                option.value = option.textContent.trim();
+            });
+
+            const saveInputText = () => {
+                const nameInput = document.querySelector('.name-page__my-input');
+                // const citySelect = document.querySelector('.name-page__my-select');
+
+                // let cityValue = citySelect.value || "Иркутск";
+                // resultCity = cityValue;
+                // console.log("111", resultCity)
+
+                if (nameInput.value) {
+                    let nameValue = nameInput.value.replace(/\s/g, '').trim();
+                    selectedText = sessionStorage.getItem('selected-text');
+                    resultText = `${nameValue}, ${selectedText}`;
+                    sessionStorage.setItem('result-text', resultText);
+                    console.log(resultText);
+                }
+            };
+
+            const postData = () => {
+                activeDesign = sessionStorage.getItem('data-design-active');
+                resultText = sessionStorage.getItem('result-text');
+                const data = {
+                    text: resultText,
+                    city: resultCity,
+                    design: +activeDesign
+                };
+                console.log('Данные, отправляемые на сервер:', data);
+
+                const queryString = new URLSearchParams(data).toString();
+
+                const url = `https://nikolajgromkov.ru/flex/?${queryString}`;
+                console.log(url)
+
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Ошибка сети или сервера');
+                        }
+                        return response.json();
+                    })
+                    .then(result => {
+                        console.log('Данные успешно отправлены и получен ответ:', result);
+
+                        setPageDisplay(loadingPage, 'none');
+                        setPageDisplay(resultPage, 'block');
+                        sessionStorage.setItem('currentPage', 'result-page');
+                        setBackground(sessionStorage.getItem('currentPage'));
+
+                        dataImg = result.url;
+
+                        const imgElement = document.querySelector('.result-page__design-card-img');
+                        const downloadLink = document.querySelector('.result-page__link');
+                        const downloadLink2 = document.querySelector('.result-page__link2');
+
+                        imgElement.src = dataImg;
+                        downloadLink.href = dataImg;
+                        downloadLink2.href = dataImg;
+
+                        sessionStorage.setItem('dataImgStorage', dataImg);
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при отправке запроса:', error);
+                    });
+            };
+
+            const setupResultPage = () => {
+                const imgElement = document.querySelector('.result-page__design-card-img');
+                const downloadLink = document.querySelector('.result-page__link');
+                const downloadLink2 = document.querySelector('.result-page__link2');
+
+                dataImg = sessionStorage.getItem('dataImgStorage');
+                console.log(dataImg);
+
+                imgElement.src = dataImg;
+                downloadLink.href = dataImg;
+                downloadLink2.href = dataImg;
+
+                const fileName = dataImg.split('/').pop();
+                downloadLink.download = fileName;
+                downloadLink2.download = fileName;
+                console.log(document.querySelector('.result-page__link'));
+            };
+
+            const validateName = () => {
+                const nameInput = document.querySelector('.name-page__my-input');
+                const validationField = document.querySelector('.validation-field');
+                const nameValue = nameInput.value.trim();
+                console.log(nameValue)
+
+                const nameRegular = /^[A-Za-zА-Яа-яЁё]+$/;
+
+                if (nameValue == '') {
+                    nameInput.style.borderColor = 'red';
+                    nameInput.style.boxShadow = '0 0 5px red';
+                    validationField.textContent = 'Необходимо ввести имя!';
+                    console.log(6)
+                    return false;
+                } else if (!nameRegular.test(nameValue)) {
+                    nameInput.style.borderColor = 'red';
+                    nameInput.style.boxShadow = '0 0 5px red';
+                    validationField.textContent = 'Неправильно введено имя!';
+                    console.log(1)
+                    return false;
+                } else {
+                    nameInput.style.borderColor = '';
+                    nameInput.style.boxShadow = '';
+                    validationField.textContent = '';
+                    console.log(2)
+                    return true;
+                }
+            };
+
+            document.querySelector('.name-page__my-input').addEventListener('input', validateName);
+
+            let currentPage = sessionStorage.getItem('currentPage') || 'main-page';
+            sessionStorage.setItem('currentPage', currentPage);
+            setBackground(currentPage);
+
+            switch (currentPage) {
+                case 'main-page':
+                    setPageDisplay(mainPage, 'block');
+                    break;
+                case 'design-page':
+                    setPageDisplay(designPage, 'block');
+                    initDesignSwiper();
+                    break;
+                case 'text-page':
+                    initTextSwiper();
+                    setupTextPage();
+                    setPageDisplay(textPage, 'block');
+                    break;
+                case 'name-page':
+                    setPageDisplay(namePage, 'block');
+                    document.querySelector('.name-page__button').addEventListener('click', () => {
+                        if (validateName()) {
+                            saveInputText();
+                            setPageDisplay(mainPage, 'none');
+                            setPageDisplay(designPage, 'none');
+                            setPageDisplay(textPage, 'none');
+                            setPageDisplay(namePage, 'none');
+                            setPageDisplay(loadingPage, 'block');
+                            sessionStorage.setItem('currentPage', 'loading-page');
+                            setBackground(sessionStorage.getItem('currentPage'));
+                            setTimeout(postData, 1000);
+                        }
+                    });
+                    break;
+                case 'loading-page':
+                    setPageDisplay(loadingPage, 'block');
+                    setTimeout(postData, 1000);
+                    break;
+                case 'result-page':
+                    setPageDisplay(resultPage, 'block');
+                    setupResultPage();
+                    break;
+            }
+
+            document.querySelector('.logo-link').addEventListener('click', () => {
+                setPageDisplay(mainPage, 'block');
+                setPageDisplay(designPage, 'none');
+                setPageDisplay(textPage, 'none');
+                setPageDisplay(namePage, 'none');
+                setPageDisplay(loadingPage, 'none');
+                setPageDisplay(resultPage, 'none');
+                sessionStorage.clear();
+                sessionStorage.setItem('currentPage', 'main-page');
+                setBackground(sessionStorage.getItem('currentPage'));
+                console.log(1)
+            });
+
+            document.querySelector('.main__button').addEventListener('click', () => {
+                setPageDisplay(mainPage, 'none');
+                setPageDisplay(designPage, 'block');
+                sessionStorage.setItem('currentPage', 'design-page');
+                setBackground(sessionStorage.getItem('currentPage'));
+                initDesignSwiper();
+            });
+
+            document.querySelector('.design-page__button').addEventListener('click', () => {
+                setPageDisplay(designPage, 'none');
+                initTextSwiper();
+                setupTextPage();
+                setPageDisplay(textPage, 'block');
+                sessionStorage.setItem('currentPage', 'text-page');
+                setBackground(sessionStorage.getItem('currentPage'));
+            });
+
+            document.querySelector('.text-page__button').addEventListener('click', () => {
+                setPageDisplay(mainPage, 'none');
+                setPageDisplay(designPage, 'none');
+                setPageDisplay(textPage, 'none');
+                setPageDisplay(namePage, 'block');
+                sessionStorage.setItem('currentPage', 'name-page');
+                setBackground(sessionStorage.getItem('currentPage'));
+                document.querySelector('.name-page__button').addEventListener('click', saveInputText);
+            });
+
+            document.querySelector('.name-page__button').addEventListener('click', () => {
+                if (validateName()) {
+                    saveInputText();
+                    setPageDisplay(mainPage, 'none');
+                    setPageDisplay(designPage, 'none');
+                    setPageDisplay(textPage, 'none');
+                    setPageDisplay(namePage, 'none');
+                    setPageDisplay(loadingPage, 'block');
+                    sessionStorage.setItem('currentPage', 'loading-page');
+                    setBackground(sessionStorage.getItem('currentPage'));
+                    setTimeout(postData, 9000);
+                }
+            });
+
+            const goBack = () => {
+                currentPage = sessionStorage.getItem('prevPage');
+                sessionStorage.setItem('currentPage', currentPage);
+                setBackground(currentPage);
+
+                switch (currentPage) {
+                    case 'main-page':
+                        location.reload();
+                        setPageDisplay(mainPage, 'block');
+                        break;
+                    case 'design-page':
+                        setPageDisplay(textPage, 'none');
+                        setPageDisplay(designPage, 'block');
+                        initDesignSwiper();
+                        break;
+                    case 'text-page':
+                        setupTextPage();
+                        setPageDisplay(namePage, 'none');
+                        setPageDisplay(textPage, 'block');
+                        initTextSwiper();
+                        restoreTextCard();
+                        break;
+                }
+            }
+
+            document.querySelector('.design-page__button-back').addEventListener('click', () => {
+                sessionStorage.setItem('prevPage', 'main-page');
+                goBack();
+                sessionStorage.clear();
+                sessionStorage.setItem('currentPage', 'main-page');
+                setBackground(sessionStorage.getItem('currentPage'));
+                console.log(1)
+            });
+
+            document.querySelector('.text-page__button-back').addEventListener('click', () => {
+                sessionStorage.setItem('prevPage', 'design-page');
+                goBack();
+                console.log(sessionStorage.getItem('data-design-active'))
+            });
+
+            document.querySelector('.name-page__button-back').addEventListener('click', () => {
+                sessionStorage.setItem('prevPage', 'text-page');
+                goBack();
+                console.log(sessionStorage.getItem('text-active-slide-index'))
+            });
+
+            document.querySelector('.result-page__link2').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const url = this.href;
+                const fileName = url.split('/').pop();
+                console.log(url)
+                fetch(url, { method: 'GET' })
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const link = document.createElement('a');
+                        link.href = URL.createObjectURL(blob);
+                        link.download = fileName;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при скачивании файла:', error);
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

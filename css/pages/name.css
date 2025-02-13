@@ -1,0 +1,99 @@
+.main {}
+
+.main__name {}
+
+.name-page {}
+
+.name-page__container {}
+
+.name-page__content {}
+
+.content {}
+
+.name-page__text {
+    max-width: 220px;
+}
+
+.name-page__title {}
+
+.name-page__constructor {
+    padding-top: 81px;
+    padding-bottom: 319px;
+    width: 100%;
+}
+
+.name-page__my-input {}
+
+.name-page__button {}
+
+@media (min-width: 375px) {
+    .name-page__text {
+        max-width: 191px;
+    }
+
+    .name-page__constructor {
+        padding-top: 64px;
+        padding-bottom: 227px;
+    }
+}
+
+@media (min-width: 450px) {
+    .name-page__text {
+        max-width: 312px;
+    }
+
+    .name-page__constructor {
+        padding-top: 85px;
+        padding-bottom: 420px;
+    }
+}
+
+@media (max-height:644px) {
+    .name-page__constructor {
+        padding-top: 64px;
+        padding-bottom: 134px;
+    }
+}
+
+@media (max-height:549px) {
+    .name-page__constructor {
+        padding-top: 58px;
+        padding-bottom: 97px;
+    }
+    .name-page__content {
+        padding-top: 51px;
+        padding-bottom: 13px;
+    }
+    .text-page__text {
+        margin-bottom: 17px;
+    }
+    .text-page__constructor {
+        margin-bottom: 17px;
+    }
+    .text-page__slider {
+        margin-bottom:18px;
+    }
+    .text-slider__swiper-pagination {
+        top: 9px!Important;
+    }
+    .text-card {
+        max-width: 158px;
+        padding: 10px 0px 14px 0px;
+    }
+    .text-card__text {
+        font-size: 11px;
+        line-height: 14px;
+    }
+    .text-slider__slide.swiper-slide-active > .text-card {
+        padding: 8px 5px 12px 5px;
+    }
+    .text-page__design-card-container {
+        max-width: 138px;
+    }
+    .design-card__title {
+        top: 34px;
+    left: 13px;
+    max-width: 111px;
+    font-size: 23px;
+}
+}

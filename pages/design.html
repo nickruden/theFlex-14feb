@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выберите дизайн</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/UI/button.css">
+    <link rel="stylesheet" href="../css/UI/input.css">
+    <link rel="stylesheet" href="../css/card.css">
+
+    <link rel="stylesheet" href="../css/pages/design.css">
+</head>
+
+<body class="wrapper">
+    <header class="header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-wrap">
+                <img src="../imgs/Logo.svg" alt="" class="logo">
+            </div>
+        </a>
+    </header>
+    <main class="main">
+        <div class="main__design design-page">
+            <div class="design-page__container my-container">
+                <div class="design-page__content content">
+                    <div class="design-page__text text">
+                        <h2 class="design-page__title inner-title">Выбери оформление</h2>
+                    </div>
+                    <div class="design-page__constructor constructor">
+                        <input class="my-input design-page__my-input" type="text" name="design">
+                        <div class="design-page__slider design-slider">
+                            <div class="swiper design-slider__swiper">
+                                <div class="swiper-wrapper design-slider__swiper-wrapper">
+                                    <div class="swiper-slide design-slider__slide">
+                                        <div class="design-slider__card design-card" data-design="1">
+    
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide design-slider__slide">
+                                        <div class="design-slider__card design-card" data-design="2">
+    
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide design-slider__slide">
+                                        <div class="design-slider__card design-card" data-design="3">
+    
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide design-slider__slide">
+                                        <div class="design-slider__card design-card" data-design="4">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination design-slider__swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="./text.html" class="design-page__link my-button">
+                        <div class="my-button__icon-wrap">
+                            <img src="../imgs/button/arrow.svg" alt="" class="my-button__icon">
+                        </div>
+                        <span class="my-button__text">следующий шаг</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const designSwiper = new Swiper('.design-slider__swiper', {
+            direction: 'horizontal',
+            slidesPerView: 1,
+            spaceBetween: 13,
+            pagination: {
+                el: '.design-slider__swiper-pagination',
+            },
+            on: {
+                    slideChangeTransitionEnd: function () {
+                        updateDesign();
+                    }
+                }
+        });
+
+        function updateDesign() {
+                const activeSlide = document.querySelector('.swiper-slide-active .design-card');
+                const designInput = document.querySelector('.design-page__my-input');
+
+                const designValue = activeSlide.getAttribute('data-design');
+
+                designInput.value = designValue;
+                localStorage.setItem('activeDesign', designValue);
+
+                console.log(designInput.value, localStorage.getItem('activeDesign'))
+            }
+
+            updateDesign();
+    </script>
+</body>
+
+</html>

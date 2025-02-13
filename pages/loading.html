@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подождите</title>
+
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+
+    <link rel="stylesheet" href="../css/pages/loading.css">
+</head>
+<body class="wrapper">
+    <header class="header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-wrap">
+                <img src="../imgs/Logo.svg" alt="" class="logo">
+            </div>
+        </a>
+    </header>
+    <main class="main">
+        <div class="main__loading loading-page">
+            <div class="loading-page__container my-container">
+                <div class="loading-page__loader loader-wrap">
+                    <div class="loader-wrap__text">Происходит магия</div>
+                    <div class="loader-wrap__loader"></div>
+                </div>
+                <div class="loading-page__img-wrap">
+                    <img src="../imgs/loading-img.png" alt="" class="loading-page__img">
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     function sendData() {
+        //         const design = localStorage.getItem('activeDesign');
+        //         const text = localStorage.getItem('resultText');
+
+        //         const data = {
+        //             text: text,
+        //             design: design
+        //         };
+        //         console.log(data)
+
+        //         fetch('https://nikolajgromkov.ru/flex/', {
+        //             method: 'POST',
+        //             body: JSON.stringify(data),
+        //         })
+        //             .then(response => response.json())
+        //             .then(result => {
+        //                 localStorage.setItem('imgUrl', result.url);
+        //                 window.location.href = './result.html';
+        //             })
+        //             .catch(error => {
+        //                 console.error('Ошибка при отправке запроса:', error);
+        //             });
+        //     }
+
+        //     setTimeout(sendData, 1000);
+        // });
+    </script>
+</body>
+</html>
