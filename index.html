@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="./libs/swiper.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
-    <link rel="stylesheet" href="./css/UI/button.css">
 </head>
 
 <body>
@@ -263,14 +262,13 @@
                             </div>
                             <span class="my-button__text">Скачать</span>
                         </a>
-                        <p class="result-page__bottom-text">отправь сертификат подруге в любом месенджере</p>
                     </div>
                     <div class="result-page__background-imgs">
-                        <img src="./imgs/blue-ball.png" alt="" class="result-page__blue-ball-img float" loading="lazy">
-                        <img src="./imgs/dumbbells.png" alt="" class="result-page__dumbbells-img float" loading="lazy">
-                        <img src="./imgs/pink-bottle.png" alt=""
+                        <img src="./imgs/bow.png" alt="" class="result-page__dumbbells-img float" loading="lazy">
+                        <img src="./imgs/present.png" alt=""
                             class="result-page__pink-bottle-img result-page__pink-bottle-img" loading="lazy">
                     </div>
+                    <img src="./imgs/envelope.png" alt="" class="result-page__blue-ball-img result-page__blue-ball-img_rotate" loading="lazy">
                 </div>
             </div>
         </main>
@@ -311,11 +309,7 @@
                     'default': '#FAFAFA'
                 };
 
-                if (currentPage == 'result-page') {
-                    document.body.style.background = 'transparent';
-                } else {
                     document.body.style.background = backgrounds[currentPage] || backgrounds['default'];
-                }
 
                 // document.querySelector('.main').style.background = backgrounds[currentPage] || backgrounds['default'];
             };

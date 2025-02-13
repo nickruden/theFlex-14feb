@@ -253,13 +253,15 @@ button {
 }
 
 .result-page__jump-rope-img_rotate {
-    transform: rotate(8.58deg);
     animation: 2s ease-in-out infinite float-jump-rope-img
 }
 
 .result-page__pink-bottle-img {
-    transform: rotate(14.65deg);
     animation: 2s ease-in-out infinite float-result-page-pink-bottle-img
+}
+.result-page__blue-ball-img_rotate {
+    transform: rotate(10deg) scaleX(-1);
+    animation: 2s ease-in-out infinite float-result-page-blue-ball-img
 }
 
 .main__heart-img_rotate {
@@ -369,11 +371,22 @@ button {
 
     0%,
     100% {
-        transform: translateY(0) rotate(9.07deg)
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-5px) rotate(9.07deg)
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes float-result-page-blue-ball-img {
+    0%,
+    100% {
+        transform: translateY(0) rotate(10deg) scaleX(-1);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(10deg) scaleX(-1);
     }
 }
 
@@ -496,12 +509,12 @@ button {
     max-height: 34px;
     padding: 3px;
     font-family: 'Manrope';
-    background: #e8ff21 !important;
+    background: #F96072 !important;
     font-size: 10px;
     font-weight: 500;
     line-height: 10px;
     letter-spacing: -.02em;
-    color: #000;
+    color: #FCFCFC;
     text-transform: lowercase;
     border-radius: 1000px;
     box-shadow: 0 8px 24px 0 #2d2D2D26;
@@ -529,14 +542,13 @@ button {
     margin-right: 5px
 }
 
-.my-button:hover,
-.my-button:focus {
+.my-button:hover, .my-button:focus {
     background: #fcfcfc !important;
+    color: #F96072;
 }
 
-.my-button:hover .my-button__icon-wrap,
-.my-button:focus .my-button__icon-wrap {
-    background: #e8ff21 !important;
+.my-button:hover .my-button__icon-wrap, .my-button:focus .my-button__icon-wrap {
+    background: #F96072 !important;
 }
 
 .my-button__icon {
@@ -1933,7 +1945,7 @@ button {
         top: 34px;
         left: 13px;
         max-width: 111px;
-        font-size: 23px;
+        font-size: 18px;
     }
 }
 
@@ -2159,6 +2171,7 @@ button {
     width: 139px;
     z-index: 7;
     background: #FCFCFC!important;
+    color: #000000;
 }
 
 .result-page__link .my-button__icon-wrap {
@@ -2220,22 +2233,25 @@ button {
 }
 
 .result-page__blue-ball-img {
+    position: absolute;
     top: 10px;
     left: 66.7%;
-    max-height: 165px;
+    max-height: 224px;
+    z-index: -1;
 }
 
 .result-page__dumbbells-img {
-    max-height: 85px;
-    bottom: 148px;
-    left: -53px;
+    width: 181px;
+    height: 181px;
+    top: -8px;
+    left: -52px;
 }
 
 .result-page__pink-bottle-img {
-    max-height: 203px;
+    max-height: 224px;
     bottom: -68px;
     right: 10px;
-    transform: rotate(14.65deg);
+    z-index: -1;
 }
 
 .result-page__background-imgs {
@@ -2248,7 +2264,7 @@ button {
 
 .result-page__background-imgs>* {
     position: absolute;
-    z-index: 5
+    z-index: -1;
 }
 
 .result-page__jump-rope-img {
@@ -2258,26 +2274,6 @@ button {
     left: -47px;
     transform: rotate(8.58deg);
     position: absolute
-}
-
-.result-page__blue-ball-img {
-    top: 10px;
-    left: 66.7%;
-    height: 165px
-}
-
-.result-page__dumbbells-img {
-    width: 92px;
-    height: 91px;
-    top: 395px;
-    left: -28px
-}
-
-.result-page__pink-bottle-img {
-    height: 203px;
-    bottom: -68px;
-    right: 10px;
-    transform: rotate(14.65deg)
 }
 
 @media (min-width: 375px) {
@@ -2323,20 +2319,20 @@ button {
     .result-page__blue-ball-img {
         top: 10px;
         left: 67%;
-        height: 209px;
-        max-height: 261px;
+        max-height: 224px;
     }
 
     .result-page__dumbbells-img {
-        width: 127px;
-        height: 126px;
-        top: 476px;
-        left: -58px;
+        width: 181px;
+        height: 181px;
+        top: -8px;
+        left: -52px;
         max-height: none;
     }
 
     .result-page__pink-bottle-img {
-        height: 260px;
+        height: 224px;
+        width: 224px;
         bottom: -71px;
         right: -10px;
         max-height: none;
@@ -2387,15 +2383,16 @@ button {
     }
 
     .result-page__dumbbells-img {
-        width: 157px;
-        height: 156px;
-        top: 562px;
-        left: -81px;
+        width: 181px;
+        height: 181px;
+        top: -8px;
+        left: -52px;
         max-height: none;
     }
 
     .result-page__pink-bottle-img {
-        height: 341px;
+        height: 260px;
+        width: 260px;
         bottom: -71px;
         right: -10px;
         max-height: none;
@@ -2441,18 +2438,19 @@ button {
     }
 
     .result-page__dumbbells-img {
-        width: 154px;
-        height: 166px;
-        top: 370px;
-        left: -49px;
+        width: 181px;
+        height: 181px;
+        top: -8px;
+        left: -52px;
         max-height: none;
     }
 
     .result-page__pink-bottle-img {
-        height: 346px;
-        bottom: -82px;
-        right: -12px;
-        max-height: none;
+        height: 378px;
+        width: 378px;
+    bottom: 266px;
+    right: -155px;
+    max-height: none;
     }
 }
 
@@ -2499,17 +2497,18 @@ button {
     }
 
     .result-page__dumbbells-img {
-        width: 144px;
-        height: 150px;
-        top: 370px;
-        left: -51px;
+        width: 181px;
+    height: 181px;
+    top: -7px;
+    left: -51px;
         max-height: none;
     }
 
     .result-page__pink-bottle-img {
-        height: 344px;
-        bottom: -171px;
-        right: -15px;
+        height: 290px;
+        width: 290px;
+        bottom: 68px;
+        right: -98px;
         max-height: none;
     }
 }
@@ -2556,17 +2555,18 @@ button {
     }
 
     .result-page__dumbbells-img {
-        width: 136px;
-        height: 137px;
-        top: 370px;
-        left: -55px;
+        width: 181px;
+    height: 181px;
+    top: -7px;
+    left: -51px;
         max-height: none;
     }
 
     .result-page__pink-bottle-img {
-        height: 303px;
-        bottom: -127px;
-        right: -3px;
+        height: 290px;
+        width: 290px;
+        bottom: 68px;
+        right: -98px;
         max-height: none;
     }
 }
@@ -2613,17 +2613,18 @@ button {
     }
 
     .result-page__dumbbells-img {
-        width: 136px;
-        height: 137px;
-        top: 370px;
-        left: -55px;
+        width: 181px;
+    height: 181px;
+    top: -7px;
+    left: -51px;
         max-height: none;
     }
 
     .result-page__pink-bottle-img {
-        height: 303px;
-        bottom: -127px;
-        right: -3px;
+        height: 290px;
+        width: 290px;
+        bottom: 68px;
+        right: -98px;
         max-height: none;
     }
 }
