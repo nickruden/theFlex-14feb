@@ -1355,7 +1355,7 @@ button {
     }
 }
 
-@media (max-height:549px) {
+@media (max-height:550px) {
     .main-page {
         padding-top: 125px;
         padding-bottom: 118px
@@ -1398,7 +1398,7 @@ button {
     }
 
     .main__bag-img {
-        top: 281px;
+        top: 318px;
         right: -78px;
         width: 233px;
         height: 233px
